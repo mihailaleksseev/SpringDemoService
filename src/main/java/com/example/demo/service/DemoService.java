@@ -36,7 +36,7 @@ public class DemoService {
     @Transactional(readOnly = true)
     public Demo getById(Long id) {
         return demoRepository.findById(id)
-            .orElseThrow(() -> new ServiceException(NOT_FOUND, "error.demo_object_not_found", id));
+            .orElseThrow(() -> new ServiceException(NOT_FOUND, "exception.not-found.service.demo-object-not-found", id));
     }
 
     @Transactional(readOnly = true)
