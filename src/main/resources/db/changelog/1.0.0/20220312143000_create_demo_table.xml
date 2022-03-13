@@ -12,9 +12,6 @@
             CONSTRAINT demo_pk UNIQUE (id)
             );
 
-            CREATE INDEX nui_demo_name ON demo USING BTREE (name);
-            CREATE UNIQUE INDEX "ui_demo_code" ON demo (code);
-
             COMMENT ON TABLE demo IS 'Test table name';
 
             COMMENT ON COLUMN demo.id IS 'Demo id';
