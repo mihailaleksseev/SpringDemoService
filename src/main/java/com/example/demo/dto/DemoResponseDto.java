@@ -8,13 +8,13 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DemoResponseDto {
 
-    @Schema(description = "Идентификатор")
+    @Schema(description = "Id")
     private long id;
 
-    @Schema(description = "Имя")
+    @Schema(description = "Name")
     private String name;
 
-    @Schema(description = "Код")
+    @Schema(description = "Cod")
     private String code;
 
 }

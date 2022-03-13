@@ -11,12 +11,12 @@ import lombok.Data;
 public class DemoRequestDto {
 
     @NotEmpty
-    @Schema(description = "Имя")
+    @Schema(description = "Name")
     private String name;
 
     @NotEmpty
     @Size(min = 10, max = 12)
-    @Schema(example = "5412-99-1666",description = "Код")
+    @Schema(example = "5412-99-1666",description = "Code")
     private String code;
 
 }
