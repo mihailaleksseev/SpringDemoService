@@ -41,7 +41,6 @@ dependencies {
 	// Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'com.h2database:h2:2.1.210'
-
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 	testAnnotationProcessor "org.mapstruct:mapstruct-processor:1.4.2.Final"
 
