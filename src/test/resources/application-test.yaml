@@ -5,3 +5,5 @@ spring:
   sql:
     init:
       data-locations: classpath:db/test.sql
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

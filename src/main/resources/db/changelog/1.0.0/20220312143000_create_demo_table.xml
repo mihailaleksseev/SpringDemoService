@@ -3,6 +3,16 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
     <changeSet id="20220312143000_create_demo_table" author="alekseev">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                <![CDATA[
+                    SELECT count(*)
+                    FROM information_schema.tables
+                    WHERE table_schema = current_schema()
+                        AND table_name = 'demo';
+                ]]>
+            </sqlCheck>
+        </preConditions>
         <sql>
             CREATE TABLE demo
             (

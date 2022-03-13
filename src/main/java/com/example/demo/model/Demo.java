@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -14,8 +13,7 @@ import lombok.Data;
 public class Demo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "demo_id_generator")
-    @SequenceGenerator(name = "demo_id_generator", sequenceName = "demo_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
