@@ -5,11 +5,9 @@ import com.example.demo.model.Demo;
 import com.example.demo.repository.DemoRepository;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import static com.example.demo.exception.ErrorType.NOT_FOUND;
-
 
 @Service
 @AllArgsConstructor
@@ -36,7 +34,7 @@ public class DemoService {
     @Transactional(readOnly = true)
     public Demo getById(Long id) {
         return demoRepository.findById(id)
-            .orElseThrow(() -> new ServiceException(NOT_FOUND, "exception.not-found.service.demo-object-not-found", id));
+            .orElseThrow(() -> new ServiceException(HttpStatus.NOT_FOUND, "exception.not-found.service.demo-object-not-found", id));
     }
 
     @Transactional(readOnly = true)
